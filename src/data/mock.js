@@ -1,13 +1,13 @@
 // Mock data for SubruArun Portfolio
 
 export const profileData = {
-  name: "SubruArun",
-  title: "Data Engineer & MLOps Engineer",
-  tagline: "Student | Building scalable data pipelines & ML systems",
-  avatar: "https://avatars.githubusercontent.com/u/72728506?s=400&v=4",
-  email: "subruarun@email.com",
-  github: "https://github.com/SubruArun",
-  linkedin: "https://linkedin.com/in/subruarun",
+  name: "",
+  title: "Data/MLOps Engineer",
+  tagline: "Actively Learning, building, and evolving in tech",
+  avatar: "",
+  email: "",
+  github: "",
+  linkedin: "",
   location: "Open to opportunities",
   bio: "I'm a passionate student with hands-on experience in Data Engineering and MLOps. I specialize in building scalable real-time data pipelines, machine learning systems, and interactive data visualizations. Currently exploring the intersection of data engineering and AI/ML."
 };

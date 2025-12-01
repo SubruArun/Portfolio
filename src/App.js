@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from './context/ThemeContext';
+import { ThemeProvider } from './context/theme_context';
 import { Toaster } from './components/ui/toaster';
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
-import HeroSection from './components/sections/HeroSection';
-import AboutSection from './components/sections/AboutSection';
-import ProjectsSection from './components/sections/ProjectsSection';
-import BackgroundSection from './components/sections/BackgroundSection';
-import SkillsSection from './components/sections/SkillsSection';
-import DownloadsSection from './components/sections/DownloadsSection';
-import ContactSection from './components/sections/ContactSection';
+import Header from './components/layout/header';
+import Footer from './components/layout/footer';
+import HeroSection from './components/sections/herosection';
+import AboutSection from './components/sections/aboutsection';
+import ProjectsSection from './components/sections/projectssection';
+import BackgroundSection from './components/sections/backgroundsection';
+import SkillsSection from './components/sections/skillsection';
+import DownloadsSection from './components/sections/downloadsection';
+import ContactSection from './components/sections/contactsection';
 import './App.css';
 
 const Portfolio = () => {

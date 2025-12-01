@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/theme_context';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { Button } from '../ui/button';
 
@@ -43,7 +43,7 @@ const Header = () => {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
           <a
-            href="#"
+            href="#top"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
