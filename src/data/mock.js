@@ -1,14 +1,15 @@
 // Mock data for SubruArun Portfolio
+import professionalProfilePic from './professional_profile_pic.jpg';
 
 export const profileData = {
-  name: "",
+  name: "Subramanian L",
   title: "Data/MLOps Engineer",
   tagline: "Actively Learning, building, and evolving in tech",
-  avatar: "",
-  email: "",
-  github: "",
-  linkedin: "",
-  location: "Open to opportunities",
+  avatar: professionalProfilePic,
+  email: "arun.lsubramanian@email.com",
+  github: "https://github.com/SubruArun",
+  linkedin: "https://www.linkedin.com/in/subramanian-l-646a55a5/",
+  location: "Munich, Germany",
   bio: "I'm a passionate student with hands-on experience in Data Engineering and MLOps. I specialize in building scalable real-time data pipelines, machine learning systems, and interactive data visualizations. Currently exploring the intersection of data engineering and AI/ML."
 };
 
@@ -23,7 +24,7 @@ export const aboutData = {
 };
 
 export const currentStatus = {
-  status: "Open to Opportunities",
+  status: "Exploring Opportunities",
   description: "Currently seeking full-time roles in Data Engineering, MLOps, or Machine Learning. Available for internships and collaborative projects.",
   interests: [
     "Real-time data streaming architectures",
@@ -38,26 +39,33 @@ export const backgroundData = {
   education: [
     {
       id: 1,
-      degree: "Bachelor's/Master's in Computer Science",
-      institution: "University Name",
-      period: "2020 - Present",
-      description: "Focusing on Data Science, Machine Learning, and Software Engineering"
+      degree: "Master's in Artificial Intelligence Engineering",
+      institution: "Tehcnische Hochschule Ingolstadt",
+      period: "2023 - 2025",
+      description: "Focusing on Data Engineering/Analysis, Machine Learning and Automation"
+    },
+    {
+      id: 2,
+      degree: "Bachelor's in Computer Science",
+      institution: "APJ Abdul Kalam Technological University",
+      period: "2016 - 2020",
+      description: "Focusing on Machine Learning and Software Engineering"
     }
   ],
   experience: [
     {
       id: 1,
       role: "Data Engineer",
-      company: "Previous Company",
-      period: "2023 - 2024",
+      company: "Turbolab Technologies",
+      period: "2022 - 2023",
       description: "Designed and maintained ETL pipelines, worked with large-scale data processing systems",
       technologies: ["Python", "PostgreSQL", "Apache Kafka", "AWS"]
     },
     {
       id: 2,
-      role: "MLOps Engineer",
-      company: "Previous Company",
-      period: "2022 - 2023",
+      role: "Python Developer",
+      company: "Turbolab Technologies",
+      period: "2020 - 2022",
       description: "Built and deployed ML models, created CI/CD pipelines for model training and deployment",
       technologies: ["Python", "Docker", "Kubernetes", "MLflow"]
     }
@@ -119,7 +127,7 @@ export const projectsData = [
       "Text preprocessing and feature extraction"
     ],
     github: "https://github.com/SubruArun/Hate-Speech-Detection",
-    stars: 0,
+    stars: 1,
     image: null
   },
   {
@@ -183,7 +191,7 @@ export const projectsData = [
       "Result reporting"
     ],
     github: "https://github.com/SubruArun/Address-check-scraper",
-    stars: 1,
+    stars: 0,
     image: null
   }
 ];
