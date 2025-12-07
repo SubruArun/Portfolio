@@ -35,7 +35,7 @@ export const currentStatus = {
     "Cloud-native data solutions",
     "Natural Language Processing"
   ],
-  lastUpdated: "July 2025"
+  lastUpdated: "December 2025"
 };
 
 export const backgroundData = {
