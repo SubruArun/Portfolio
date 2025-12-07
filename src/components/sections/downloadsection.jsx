@@ -16,8 +16,18 @@ const DownloadsSection = () => {
   };
 
   const handleDownload = (item) => {
-    // In production, this would trigger actual file download
-    alert(`Download feature will be available once backend is integrated. File: ${item.filename}`);
+    if (item.type === 'resume') {
+      // Download the resume PDF
+      const link = document.createElement('a');
+      link.href = '/Subramanian_L_CV.pdf';
+      link.download = 'Subramanian_L_CV.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      // For certificates, show alert
+      alert('Please request certificates via contact form');
+    }
   };
 
   return (
@@ -39,7 +49,7 @@ const DownloadsSection = () => {
           {downloadsData.map((item) => (
             <div
               key={item.id}
-              className="bg-gradient-to-br from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-800 rounded-xl p-8 border border-neutral-200 dark:border-neutral-700 text-center hover:shadow-lg transition-all group"
+              className="bg-gradient-to-br from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-800 rounded-xl p-8 border border-neutral-200 dark:border-neutral-700 text-center hover:shadow-lg transition-all group flex flex-col h-full"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
                 {getIcon(item.type)}
@@ -48,17 +58,19 @@ const DownloadsSection = () => {
               <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">
                 {item.title}
               </h3>
-              <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-6">
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-6 flex-grow">
                 {item.description}
               </p>
 
-              <Button
-                onClick={() => handleDownload(item)}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full"
-              >
-                <Download className="h-4 w-4 mr-2" />
-                Download
-              </Button>
+              <div className="mt-auto">
+                <Button
+                  onClick={() => handleDownload(item)}
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full"
+                >
+                  <Download className="h-4 w-4 mr-2" />
+                  Download
+                </Button>
+              </div>
             </div>
           ))}
         </div>

@@ -7,6 +7,8 @@ const SkillsSection = () => {
       'Languages': '💻',
       'Data Engineering': '🔄',
       'ML & AI': '🧠',
+      'Deployment & Cloud': '☁️',
+      'Tools': '⚙️',
       'Tools & Platforms': '🛠️',
       'MLOps': '🚀',
     };
@@ -59,7 +61,7 @@ const SkillsSection = () => {
         <div className="mt-12 text-center">
           <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
             Continuously learning and adapting to new technologies. Currently exploring
-            advanced MLOps practices and cloud-native data solutions.
+            security, server setup, optimization and cloud-native data solutions with a focus on maximizing server efficiency.
           </p>
         </div>
       </div>

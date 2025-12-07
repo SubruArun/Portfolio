@@ -14,9 +14,12 @@ const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-white via-emerald-50/30 to-neutral-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950 pt-20">
       {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-      }} />
+      <div
+        className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
 
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -24,14 +27,14 @@ const HeroSection = () => {
           <div className="relative">
             <div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden ring-4 ring-emerald-500/20 dark:ring-emerald-400/20 shadow-2xl">
               <img
-                src={profileData.avatar}
-                alt={profileData.name}
+                src={profileData?.avatar || ''}
+                alt={profileData?.name || 'Profile'}
                 className="w-full h-full object-cover"
               />
             </div>
             {/* Status indicator */}
             <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-medium px-4 py-1.5 rounded-full shadow-lg">
-              {currentStatus.status}
+              {currentStatus?.status || 'Available'}
             </div>
           </div>
 
@@ -41,17 +44,17 @@ const HeroSection = () => {
               Hello, I'm
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-white mb-4 tracking-tight">
-              {profileData.name}
+              {profileData?.name || ''}
             </h1>
             <h2 className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 mb-6 font-medium">
-              {profileData.title}
+              {profileData?.title || ''}
             </h2>
             <p className="text-neutral-500 dark:text-neutral-400 max-w-xl mb-4 leading-relaxed">
-              {profileData.tagline}
+              {profileData?.tagline || ''}
             </p>
             <div className="flex items-center justify-center lg:justify-start gap-2 text-sm text-neutral-500 dark:text-neutral-400 mb-8">
               <MapPin className="h-4 w-4" />
-              <span>{profileData.location}</span>
+              <span>{profileData?.location || ''}</span>
             </div>
 
             {/* CTA Buttons */}
@@ -72,29 +75,32 @@ const HeroSection = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center justify-center lg:justify-start gap-4">
-              <a
-                href={profileData.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-900 dark:hover:bg-white hover:text-white dark:hover:text-neutral-900 transition-all"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-              <a
-                href={profileData.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-blue-600 hover:text-white transition-all"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href={`mailto:${profileData.email}`}
-                className="p-3 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-emerald-600 hover:text-white transition-all"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
+            <div className="mt-8">
+              <p className="text-sm text-neutral-500 dark:text-neutral-500 mb-4">Find me on</p>
+              <div className="flex gap-4">
+                <a
+                  href={profileData.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 hover:border-emerald-500 hover:text-emerald-600 dark:hover:border-emerald-400 dark:hover:text-emerald-400 transition-all"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+                <a
+                  href={profileData.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 hover:border-emerald-500 hover:text-emerald-600 dark:hover:border-emerald-400 dark:hover:text-emerald-400 transition-all"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                  href={`mailto:${profileData.email}`}
+                  className="p-3 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 hover:border-emerald-500 hover:text-emerald-600 dark:hover:border-emerald-400 dark:hover:text-emerald-400 transition-all"
+                >
+                  <Mail className="h-5 w-5" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

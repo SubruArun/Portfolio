@@ -20,7 +20,9 @@ const ProjectCard = ({ project, onClick }) => {
       {/* Project Image Placeholder */}
       <div className="h-48 bg-gradient-to-br from-emerald-100 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 flex items-center justify-center">
         <div className="text-6xl opacity-30">
-          {project.technologies[0] === 'Python' ? '🐍' : '💻'}
+          {project.title === 'VGI Dashboard - Streamlit' ? '🎨' : 
+           project.technologies[0] === 'Python' ? '🐍' : 
+           project.technologies[0] === 'React' ? '⚛️' : '💻'}
         </div>
       </div>
 

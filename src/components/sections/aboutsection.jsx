@@ -49,8 +49,8 @@ const AboutSection = () => {
           </div>
 
           {/* What I'm Up To Now */}
-          <div className="bg-gradient-to-br from-emerald-50 to-neutral-50 dark:from-neutral-900 dark:to-neutral-900 rounded-2xl p-8 border border-emerald-100 dark:border-neutral-800">
-            <div className="flex items-center gap-3 mb-6">
+          <div className="bg-gradient-to-br from-emerald-50 to-neutral-50 dark:from-neutral-900 dark:to-neutral-900 rounded-2xl border border-emerald-100 dark:border-neutral-800 flex flex-col h-full">
+            <div className="flex items-center gap-3 mb-8 p-8 pb-0">
               <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg">
                 <Target className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
               </div>
@@ -65,28 +65,36 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <Badge className="mb-4 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-100">
-              <Clock className="h-3 w-3 mr-1" />
-              {currentStatus.status}
-            </Badge>
+            <div className="relative px-8 pb-8 h-[600px] overflow-y-auto custom-scrollbar">
+              <Badge className="mb-4 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-100">
+                <Clock className="h-3 w-3 mr-1" />
+                {currentStatus.status}
+              </Badge>
 
-            <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
-              {currentStatus.description}
-            </p>
+              <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
+                {currentStatus.description}
+              </p>
 
-            <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mb-3 uppercase tracking-wide">
-              Current Interests
-            </h4>
-            <div className="flex flex-wrap gap-2">
-              {currentStatus.interests.map((interest, index) => (
-                <Badge
-                  key={index}
-                  variant="secondary"
-                  className="bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700"
-                >
-                  {interest}
-                </Badge>
-              ))}
+              {currentStatus.currentProjectsAndLearning && (
+                <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
+                  {currentStatus.currentProjectsAndLearning}
+                </p>
+              )}
+
+              <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mb-3 uppercase tracking-wide">
+                Current Interests
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {currentStatus.interests.map((interest, index) => (
+                  <Badge
+                    key={index}
+                    variant="secondary"
+                    className="bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700"
+                  >
+                    {interest}
+                  </Badge>
+                ))}
+              </div>
             </div>
           </div>
         </div>

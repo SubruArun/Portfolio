@@ -30,15 +30,16 @@ const BackgroundSection = () => {
               </h3>
             </div>
 
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-emerald-200 dark:bg-emerald-900" />
+            <div className="relative max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+              <div className="relative">
+                {/* Timeline line */}
+                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-emerald-200 dark:bg-emerald-900" />
 
-              <div className="space-y-8">
-                {backgroundData.experience.map((exp, index) => (
-                  <div key={exp.id} className="relative pl-12">
-                    {/* Timeline dot */}
-                    <div className="absolute left-2 top-1 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white dark:border-neutral-950" />
+                <div className="space-y-8 pb-4">
+                  {backgroundData.experience.map((exp, index) => (
+                    <div key={exp.id} className="relative pl-12">
+                      {/* Timeline dot */}
+                      <div className="absolute left-2 top-1 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white dark:border-neutral-950 z-10" />
 
                     <div className="bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 border border-neutral-200 dark:border-neutral-800">
                       <div className="flex items-start justify-between mb-2 flex-wrap gap-2">
@@ -71,8 +72,9 @@ const BackgroundSection = () => {
                         ))}
                       </div>
                     </div>
-                  </div>
-                ))}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -88,15 +90,16 @@ const BackgroundSection = () => {
               </h3>
             </div>
 
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-emerald-200 dark:bg-emerald-900" />
+            <div className="relative max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+              <div className="relative">
+                {/* Timeline line */}
+                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-emerald-200 dark:bg-emerald-900" />
 
-              <div className="space-y-8">
-                {backgroundData.education.map((edu) => (
-                  <div key={edu.id} className="relative pl-12">
-                    {/* Timeline dot */}
-                    <div className="absolute left-2 top-1 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white dark:border-neutral-950" />
+                <div className="space-y-8 pb-4">
+                  {backgroundData.education.map((edu) => (
+                    <div key={edu.id} className="relative pl-12">
+                      {/* Timeline dot */}
+                      <div className="absolute left-2 top-1 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white dark:border-neutral-950 z-10" />
 
                     <div className="bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 border border-neutral-200 dark:border-neutral-800">
                       <div className="flex items-start justify-between mb-2 flex-wrap gap-2">
@@ -118,16 +121,10 @@ const BackgroundSection = () => {
                         {edu.description}
                       </p>
                     </div>
-                  </div>
-                ))}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-
-            {/* Note for updating */}
-            <div className="mt-8 p-4 bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-900/30 rounded-lg">
-              <p className="text-sm text-amber-700 dark:text-amber-400">
-                💡 This section can be customized with your actual education and experience details.
-              </p>
             </div>
           </div>
         </div>

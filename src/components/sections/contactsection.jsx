@@ -221,10 +221,6 @@ const ContactSection = () => {
                     </>
                   )}
                 </Button>
-
-                <p className="text-xs text-center text-neutral-500 dark:text-neutral-500">
-                  Your message will be stored locally until backend is connected.
-                </p>
               </form>
             )}
           </div>
