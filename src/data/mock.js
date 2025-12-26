@@ -1,12 +1,24 @@
 // Mock data for SubruArun Portfolio
 import professionalProfilePic from './professional_profile_pic.jpg';
 
+// Helper function to format date as "Month YYYY"
+function getLastUpdated() {
+  const now = new Date();
+  const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  const month = monthNames[now.getMonth()];
+  const year = now.getFullYear();
+  return `${month} 15, ${year}`; // "December 15, 2025"
+}
+
 export const profileData = {
   name: "Subramanian L",
   title: "Data/MLOps Engineer",
   tagline: "Actively Learning, building, and evolving in tech",
   avatar: professionalProfilePic,
-  email: "arun.lsubramanian@email.com",
+  email: "arun.lsubramanian@gmail.com",
   github: "https://github.com/SubruArun",
   linkedin: "https://www.linkedin.com/in/subramanian-l-646a55a5/",
   location: "Munich, Germany",
@@ -35,7 +47,7 @@ export const currentStatus = {
     "Cloud-native data solutions",
     "Natural Language Processing"
   ],
-  lastUpdated: "December 2025"
+  lastUpdated: getLastUpdated()
 };
 
 export const backgroundData = {
